@@ -2,6 +2,7 @@ import tkinter
 import tkinter.messagebox
 import customtkinter
 from scan import printIp
+# import time 
 
 customtkinter.set_appearance_mode("System")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme("green")  # Themes: "blue" (standard), "green", "dark-blue"
@@ -86,7 +87,7 @@ class App(customtkinter.CTk):
             put = printIp(self.entry.get())
             self.label_info_1.config(text = put)
 
-        # ============ frame_info ============
+        # ============ frame_info ============ PPPPPPPPPROOOOOGRESSS BBBBARAARRRR
 
         # configure grid layout (1x1)
         self.frame_info.rowconfigure(0, weight=1)
@@ -102,8 +103,15 @@ class App(customtkinter.CTk):
                                                    justify=tkinter.LEFT)
         self.label_info_1.grid(column=0, row=0, sticky="nwe", padx=10, pady=10)
 
+        
+
         self.progressbar = customtkinter.CTkProgressBar(master=self.frame_info)
-        # self.progressbar.grid(row=1, column=0, sticky="ew", padx=15, pady=15)
+        self.progressbar.grid(row=1, column=0, sticky="ew", padx=5, pady=5)
+
+        for i in range(0,50):
+            self.progressbar.set(i)
+            # time.sleep(5)
+            
 
         # ============ frame_right ============
 
@@ -161,9 +169,9 @@ class App(customtkinter.CTk):
         self.slider_1 = customtkinter.CTkSlider(master=self.frame_right,
                                                 from_=0,
                                                 to=1,
-                                                number_of_steps=3,
+                                                number_of_steps=10,
                                                 command=self.progressbar.set)
-        # self.slider_1.grid(row=4, column=0, columnspan=2, pady=10, padx=20, sticky="we")
+        # self.slider_1.grid(row=6, column=0, columnspan=2, pady=10, padx=20, sticky="we")
 
         self.slider_2 = customtkinter.CTkSlider(master=self.frame_right,
                                                 command=self.progressbar.set)
