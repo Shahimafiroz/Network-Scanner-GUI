@@ -108,6 +108,8 @@ class App(customtkinter.CTk):
         self.progressbar = customtkinter.CTkProgressBar(master=self.frame_info)
         self.progressbar.grid(row=1, column=0, sticky="ew", padx=5, pady=5)
 
+        ########for lopppppppppppppppppppppp
+
         for i in range(0,50):
             self.progressbar.set(i)
             # time.sleep(5)
