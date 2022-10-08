@@ -47,12 +47,12 @@ class App(customtkinter.CTk):
         self.label_1.grid(row=1, column=0, pady=10, padx=10)
 
         self.button_1 = customtkinter.CTkButton(master=self.frame_left,
-                                                text="Port Scanner",
+                                                text="Vulnerability Scan",
                                                 command=self.button_event)
         self.button_1.grid(row=2, column=0, pady=10, padx=20)
 
         self.button_2 = customtkinter.CTkButton(master=self.frame_left,
-                                                text="Recon",
+                                                text="Reconnaissance",
                                                 command=self.button_event)
         self.button_2.grid(row=3, column=0, pady=10, padx=20)
 
@@ -93,9 +93,9 @@ class App(customtkinter.CTk):
         self.frame_info.columnconfigure(0, weight=1)
 
         self.label_info_1 = customtkinter.CTkLabel(master=self.frame_info,
-                                                   text="CTkLabel: Lorem ipsum dolor sit,\n" +
-                                                        "amet consetetur sadipscing elitr,\n" +
-                                                        "sed diam nonumy eirmod tempor" ,
+                                                   text="TCP PORT STATUS : \n" +
+                                                        "SUBDOMAIN LOCATION:\n" +
+                                                        "" ,
                                                    height=800,
                                                    corner_radius=6,  # <- custom corner radius
                                                    fg_color=("white", "gray38"),  # <- custom tuple-color
@@ -110,7 +110,7 @@ class App(customtkinter.CTk):
         
         self.entry = customtkinter.CTkEntry(master=self.frame_right,
                                             width=120,
-                                            placeholder_text="0.0.0.0")
+                                            placeholder_text="Domain name")
         self.entry.grid(row=8, column=0, columnspan=2, pady=20, padx=20, sticky="we")
 
 
@@ -125,7 +125,7 @@ class App(customtkinter.CTk):
         
 
         self.button_5 = customtkinter.CTkButton(master=self.frame_right,
-                                                text="Enter IP ",
+                                                text="Enter",
                                                 border_width=2,  # <- custom border_width
                                                 fg_color=None,  # <- no fg_color
                                                 command=submit)
@@ -174,11 +174,11 @@ class App(customtkinter.CTk):
         self.switch_1.grid(row=4, column=2, columnspan=1, pady=10, padx=20, sticky="we")
 
         self.switch_2 = customtkinter.CTkSwitch(master=self.frame_right,
-                                                text="Enable Auto Rescan")
+                                                text="Subdomain locator")
         self.switch_2.grid(row=5, column=2, columnspan=1, pady=10, padx=20, sticky="we")
 
         self.combobox_1 = customtkinter.CTkComboBox(master=self.frame_right,
-                                                    values=["Value 1", "Value 2"])
+                                                    values=["High", "Low"])
         self.combobox_1.grid(row=6, column=2, columnspan=1, pady=10, padx=20, sticky="we")
 
         self.check_box_1 = customtkinter.CTkCheckBox(master=self.frame_right,
@@ -193,7 +193,7 @@ class App(customtkinter.CTk):
         # set default values
         self.optionmenu_1.set("Dark")
         self.button_3.configure(state="disabled", text="Disabled CTkButton")
-        self.combobox_1.set("CTkCombobox")
+        self.combobox_1.set("Security level")
         self.radio_button_1.select()
         self.slider_1.set(0.2)
         self.slider_2.set(0.7)
